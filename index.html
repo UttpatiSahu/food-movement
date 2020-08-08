@@ -8,6 +8,48 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     </head>
+    <style>
+        .slideanim {visibility:hidden;}
+        .slide {
+            animation-name: slide;
+            -webkit-animation-name: slide;
+            animation-duration: 1s;
+            -webkit-animation-duration: 1s;
+            visibility: visible;
+        }
+        @keyframes slide {
+            0% {
+                opacity: 0;
+                transform: translateY(70%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0%);
+            }
+        }
+        @-webkit-keyframes slide {
+            0% {
+                opacity: 0;
+                -webkit-transform: translateY(70%);
+            }
+            100% {
+                opacity: 1;
+                -webkit-transform: translateY(0%);
+            }
+        }
+    </style>
+    <script>
+        $(window).scroll(function() {
+            $(".slideanim").each(function(){
+                var pos = $(this).offset().top;
+
+                var winTop = $(window).scrollTop();
+                if (pos < winTop + 600) {
+                    $(this).addClass("slide");
+                }
+            });
+        });
+    </script>
     <body>
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
@@ -29,39 +71,41 @@
                     </div>
             </div>
         </nav>
-            <div class="container-fluid" style="padding-top: 100px;">
+            <div class="container-fluid" style="padding-top: 100px; padding-left: 40px;">
                 <div style="font-size: 7vh;"><b>join the  </b><span style="color: #579c00;"><b>fresh</b></span></div>
                 <div  style="color: #579c00; font-size: 7vh;"><b>food movement</b></div><br><br>
-                <div  style="color: white; font-size: 15px;"><i class="fas fa-play" style="background-color: #579c00; border-radius: 50%; padding: 20px; text-align: center;"></i><span style="color: black; padding-left: 30px; font-size: 20px;">Watch Video</span></div>
-            </div><br><br>
-        </div><br>
-        <div class="container-fluid" >
+                <div id="item">
+                    <div  style="color: white; font-size: 15px;"><i class="fas fa-play" style="background-color: #579c00; border-radius: 50%; padding: 20px; text-align: center;"></i></div></div>
+                </div><br>
+        <div class="container-fluid slideanim" >
                 <div class="row" style=" background-color: #579c00; margin-top: 30px;">
-                    <div class="col-sm-3" style="font-size: 2vh; margin-left: 20px; text-align: justify; color: white;"><b><div style="font-size: 5vh;">#unlimited value </div><br></b></div>
+                    <div class="col" style="font-size: 2vh; margin-left: 20px; text-align: justify; color: white;"><b><div style="font-size: 5vh;">#unlimited value </div><br></b></div>
                 </div>
                 <div class="row" style=" background-color: #579c00; padding-top: 30px;">
                     <div class="col-sm-3" style="color: black; font-size: 3vh; margin-left: 20px; "><b>essential starter pack for fresh naturally grown vegetables </b></div>
                     <div class="col-sm-3" style="font-size: 3vh; margin-left: 20px; text-align: justify; color: black;"><b>#safe value<br>#fresh value<br>#healthy value  </b></div>
-                    <div class="col-sm-3" style="float: right;"><img src=" https://i1.wp.com/woolly.io/wp-content/uploads/202…page-banner-bottom-img-compressor.png?w=504&ssl=1" height="200px" width="170px"></div>
+                    <div class="col-sm-3" style="float: right;"><img src="https://i1.wp.com/woolly.io/wp-content/uploads/202…page-banner-bottom-img-compressor.png?w=504&ssl=1" height="200px" width="170px"></div>
                 </div>
         </div>
         <div class="container-fluid" style="margin-top: 20px;" >
-            <div class="row" style="margin-top: 30px;">
+            <div class="row slideanim" style="margin-top: 30px;">
                 <div class="col-sm-5" style="font-size: 5vh; margin-left: 20px; color: black;"><b>lets change<br> the way we<br> <div style="color: #579c00;">GROW.EAT.LIVE</b><br><p style="color: black; font-size: 20px;"><b>Welcome to wooly farms,your
                 authentic source for farm fresh vegetables. Grown near you,using fresh, natural farming practices to deliver good health at your doorstep.</b></p></div></div>
-                <div class="col-sm-5" style="float: right;" ><img src="https://i0.wp.com/woolly.io/wp-content/uploads/2020/04/heaves_sec2.jpg?w=766&ssl=1" height="300px" width="300px"></div>
+                <div class="col-sm-5 " style="float: right;" ><img src="https://i0.wp.com/woolly.io/wp-content/uploads/2020/04/heaves_sec2.jpg?w=766&ssl=1" height="300px" width="300px"></div>
             </div>
         </div>
-        <div class="container-fluid" style="margin-top: 20px; background-image: url(background.jpg);background-size: contain; background-repeat: repeat-x;" >
+        <div class="container-fluid slideanim" style="margin-top: 20px; background-image: url(background.jpg);background-size: contain; background-repeat: repeat-x;" >
             <div class="row" style="margin-top: 30px;">
-                <div class="col-sm-3" style="font-size: 5vh; margin-left: 20px; color: #579c00;"><b>together lets create a new earth</b></div>
-                <div class="col-sm-3"><img src="https://i1.wp.com/woolly.io/wp-content/uploads/2020/04/leaves_sec3.png?w=952&ssl=1" height="300px" width="300px"></div>
-                <div class="col-sm-3" style="font-size: 35px; margin-left: 20px;padding-top: 90px; color: #579c00; text-align: left; float: right;"><b><i class="fab fa-pagelines"></i><i class="fab fa-pagelines"></i><i class="fab fa-pagelines"></i><br>
+                <div class="col" style="font-size: 5vh; margin-left: 20px; color: #579c00;"><b>together lets create a new earth</b></div>
+            </div>
+            <div class="row" style="margin-top: 30px;">
+                <div class="col-sm-5"><img src="https://i1.wp.com/woolly.io/wp-content/uploads/2020/04/leaves_sec3.png?w=952&ssl=1" height="300px" width="300px"></div>
+                <div class="col-sm-5" style="font-size: 35px; margin-left: 20px;  color: #579c00; text-align: justify; padding-left: 60px;"><b><i class="fab fa-pagelines"></i><i class="fab fa-pagelines"></i><i class="fab fa-pagelines"></i><br>
                 <b style="font-size: 20px;">urban farming methods</b><br><i class="fas fa-cloud-sun"></i><br><b style="font-size: 20px;">controlled environments + lighting </b></b></div>
             </div>
         </div>
         <div class="container-fluid" style="margin-top: 20px;" >
-            <div class="row" style="margin-top: 30px;">
+            <div class="row slideanim" style="margin-top: 30px;">
                 <div class="col-sm-5" style="padding-left: 10px;"><img src="https://i1.wp.com/woolly.io/wp-content/uploads/2020/04/Gardening_sec4.png?w=711&ssl=1" height="300px" width="300px"></div>
                 <div class="col-sm-5" style=" margin-left: 20px; color: black;"><b><div style="font-size: 5vh;"> the way<br> <div style="color: #579c00; font-size: 5vh;">the world grows, nurtures and harvests</b></div>
                 <p style="color: black; font-size: 20px;">with the vision of buliding a new earth,woolly Farms is making an attempt to build sustainable cities, with the adoption of natural 
@@ -70,7 +114,7 @@
             </div>
         </div>
         <div class="container-fluid" style="margin-top: 20px;" >
-            <div class="row" style="margin-top: 30px;">
+            <div class="row slideanim" style="margin-top: 30px;">
                 <div class="col-sm-5" style="padding-left: 10px;"><img src="https://i1.wp.com/woolly.io/wp-content/uploads/2020/04/digging_sec6.jpg?w=728&ssl=1" height="300px" width="300px"></div>
                 <div class="col-sm-5" style="font-size: 5vh; margin-left: 20px; color: black;"><b>inspired by the<br> <div style="color: #579c00;">woolly mammoth</b>
                 <p style="color: black; font-size: 20px;"><b>The name woolly is derived from the woolly mammoth that went extinct in the ice age. One, because it was consumed by homo-sapiens
@@ -78,16 +122,54 @@
                 a fact we are faced with now!</b></p></div></div>
             </div>
         </div>
-        <div class="container-fluid" >
-            <div class="row" style=" background-color: #579c00; margin-top: 30px;">
+        <div class="container-fluid slideanim" >
+            <div class="row " style=" background-color: #579c00; margin-top: 30px;">
                 <div class="col" style="font-size: 5vh; margin-left: 20px; text-align: left; color: white;"><b><br>Fesh, safe, chemical Free vegetables delivered within minutes after harvest</b><br></div>
             </div>
-            <div class="row"  style=" background-color: #579c00; padding-top: 30px;">
+            <div class="row "  style=" background-color: #579c00; padding-top: 30px;">
                 <div class="col-sm-5" style="margin-left: 40px;"><img src=" https://i1.wp.com/woolly.io/wp-content/uploads/2020/04/broc_sec7.png?w=952&ssl=1" height="240px" width="240px"></div>
-                <div class="col-sm-5" style="font-size: 35px; color: white; margin-left: 20px;"><i class="fas fa-pump-medical"></i><br><b style="font-size: 20px;">free from harmful chemicals</b><br>
+                <div class="col-sm-5" style="font-size: 35px; color: white; margin-left: 20px; padding-left: 60px;"><i class="fas fa-pump-medical"></i><br><b style="font-size: 20px;">free from harmful chemicals</b><br>
                 <i class="far fa-clock"></i><br><b style="font-size: 20px;">delivered in minutes after harvest</b></div>          
-            </div><br><br>
+            </div>
             </div>
         </div>
+        <div class="container-fluid" style="background-image: url(https://i1.wp.com/woolly.io/wp-content/uploads/2020/04/img2.jpg?resize=1024%2C576&ssl=1);background-size: cover;background-repeat: no-repeat; height: 50vh; width: 100%;"></div>
+        <div class="container-fluid" style="background-image: url(https://i2.wp.com/woolly.io/wp-content/uploads/2020/04/img1.jpg?resize=1024%2C576&ssl=1);background-size: cover;background-repeat: no-repeat; height: 50vh; width: 100%;"></div>
+        <div class="container-fluid" style=" text-align: justify; background-repeat: no-repeat; background-image: url(https://i1.wp.com/woolly.io/wp-content/uploads/2020/04/leaves_sec10.jpg?fit=1920%2C645&ssl=1);background-size: cover; height: 40vh; width: 100%;">
+            <div style="font-size: 6vw; color: white; padding-top: 5px; "><b>GROW FRESH <br>FOOD!</b></div>
+            <p style="font-size: 20px; color: white;padding: auto;"><b>To become a woolly farmer kindly get in touch by calling us at ********* and join this earth movement</b></p>
+        </div>
+        <div class="container-fluid" style="background-color: rgb(1, 29, 1); padding: 20px; color: white; font-size: 20px;">
+            <p ><b>The 'New Earth Movement' is a constant reminder to us and future generations of the importance of food security, the impact of climate change
+            and the need for sustainibility</b></p><br>
+            <div style="font-size: 35px; padding-left: 40px;">
+                <div><i class="fab fa-whatsapp"></i><b style="padding-left: 20px; font-size: 20px;">*********</b></div>
+                <div><i class="fab fa-instagram"></i><b style="padding-left: 20px; font-size: 20px;">woollyfarms</b></div>
+                <div><i class="fas fa-globe"></i><b style="padding-left: 20px; font-size: 20px;">woolly.io</b></div>
+                <div><i class="fas fa-map-marked-alt"></i><b style="padding-left: 20px; font-size: 20px;">location</b></div>
+            </div>
+        </div>
+        <footer class="container-fluid bg-4 text-left" style="background-color: rgb(44, 44, 44);">
+            <div class="container" style="color: gray; padding-left: 40px; font-size: 20px;">
+                <div>Address :</div><br>
+                <p style="color: rgb(196, 196, 196);">Location</p><br><br>
+                <div>Contact :</div><br>
+                <p style="color: rgb(196, 196, 196);">Phone number : **********</p>
+                <p style="color: rgb(196, 196, 196);">E-mail : woolly@gmail.com</p><br><br>
+                <form>
+                    <label><b>Subscribe To Our Newsletter</b></label><br><input type="text"><br>
+                    <button class="btn-success" style="margin-top: 10px;">Subscribe</button>
+                </form><br><br>
+                <ul>Quick Links
+                    <li style="color: rgb(196, 196, 196);">00test</li>
+                    <li style="color: rgb(196, 196, 196);">Contact Us</li>
+                    <li style="color: rgb(196, 196, 196);">Partnership with Us</li>
+                    <li style="color: rgb(196, 196, 196);">Privacy Policy</li>
+                    <li style="color: rgb(196, 196, 196);">Terms of Service</li>
+                </ul>
+                <div style="font-size: 25px; text-align: center;"><i class="fab fa-twitter" style="padding-right: 10px;"></i><i class="fab fa-facebook-f" style="padding-right: 10px;"></i><i class="fab fa-linkedin-in" style="padding-right: 10px;"></i><i class="fab fa-youtube" style="padding-right: 10px;">
+                </i><i class="fab fa-instagram" style="padding-right: 10px;"></i><i class="fab fa-whatsapp" style="padding-right: 10px;"></i><i class="fas fa-envelope" style="padding-right: 10px;"></i></div>
+            </div>
+        </footer>
     </body>
 </html>
